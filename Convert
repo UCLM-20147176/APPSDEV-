@@ -1,0 +1,9 @@
+Console.WriteLine("Enter Length in cm: ");
+	   int num = Convert.ToInt32(Console.ReadLine());
+	   
+	   int fyd = num / 91;
+       int fcm = num % 91;
+       int ft = fcm / 30;
+       int  finch = (int) ((fcm % 30 / 2.54));
+	   
+	   Console.WriteLine(fyd+"yards " +ft +"feet / foot "+finch+ "inches")
