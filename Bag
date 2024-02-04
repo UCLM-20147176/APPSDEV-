@@ -1,0 +1,15 @@
+double bagp = 5.50;
+        double bag = 52;
+        double large = 3;
+        double med =  2.50;
+        double small = 2;
+        
+        double price = (bagp*bag) + (large *2) + med + small;
+            
+        
+       Console.WriteLine("Number of Bags Ordered: 52");
+       Console.WriteLine("Boxes Used: ");
+       Console.WriteLine("Large - 2");
+       Console.WriteLine("Medium - 1");
+       Console.WriteLine("Small - 1");
+       Console.WriteLine("Your total cost is: $ " +price)
