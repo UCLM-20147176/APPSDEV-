@@ -1,0 +1,12 @@
+double price, dis, disr = 0.10;
+       
+        Console.WriteLine("Enter value for price: ");
+		 price = Convert.ToDouble(Console.ReadLine());
+		if(price > 1000){
+		    dis = price * disr;
+		    Console.WriteLine("Discount is : " + dis.ToString("N2"));
+		    
+		} else {
+		    Console.WriteLine("No Discount");
+		    
+		}
