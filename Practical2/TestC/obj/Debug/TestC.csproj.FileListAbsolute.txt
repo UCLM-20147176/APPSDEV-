@@ -1,0 +1,11 @@
+C:\Users\hi\source\repos\TestC\TestC\bin\Debug\TestC.exe.config
+C:\Users\hi\source\repos\TestC\TestC\bin\Debug\TestC.exe
+C:\Users\hi\source\repos\TestC\TestC\bin\Debug\TestC.pdb
+C:\Users\hi\source\repos\TestC\TestC\obj\Debug\TestC.csproj.AssemblyReference.cache
+C:\Users\hi\source\repos\TestC\TestC\obj\Debug\TestC.Display.resources
+C:\Users\hi\source\repos\TestC\TestC\obj\Debug\TestC.Form1.resources
+C:\Users\hi\source\repos\TestC\TestC\obj\Debug\TestC.Properties.Resources.resources
+C:\Users\hi\source\repos\TestC\TestC\obj\Debug\TestC.csproj.GenerateResource.cache
+C:\Users\hi\source\repos\TestC\TestC\obj\Debug\TestC.csproj.CoreCompileInputs.cache
+C:\Users\hi\source\repos\TestC\TestC\obj\Debug\TestC.exe
+C:\Users\hi\source\repos\TestC\TestC\obj\Debug\TestC.pdb
