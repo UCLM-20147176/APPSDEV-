@@ -1,0 +1,58 @@
+
+double price = InputValues("Enter Price of Home: ");
+double rate = InputValues("Enter Interest Rate: ");
+double dwn = InputValues("Percent as Downpayement: ");
+
+double fdownpayement = downpayement(price, dwn);
+double fincAmnt = FinancedAmount(price, fdownpayement);
+double monthly = MonthlyPayement(rate, fincAmnt);
+double finAmount = TotalInterest(fincAmnt, monthly);
+Display(fdownpayement,fincAmnt,monthly,finAmount);
+
+
+double InputValues(string prompt)
+{
+    Console.Write(prompt);
+    return Convert.ToDouble(Console.ReadLine());
+}
+double downpayement(double price, double dwn)
+{
+    return price * (dwn / 100);
+}
+
+double FinancedAmount(double price, double fdownpayement)
+{
+    return price - fdownpayement;
+}
+
+double MonthlyPayement(double rate, double fincAmnt)
+{
+    double monthlyInterest = rate / 1200;
+    int numOfPayments = 30 * 12; 
+    double powerOf = Math.Pow(1 + monthlyInterest, numOfPayments);
+    powerOf = 1 / powerOf;
+    double monthlyPayment = (fincAmnt * monthlyInterest) / (1 - powerOf);
+    return monthlyPayment;
+}
+
+double TotalInterest(double fincAmnt, double monthly)
+{
+
+    int numOfPayments = 30 * 12;
+    double totalPayment = monthly * numOfPayments;
+    double Total = totalPayment - fincAmnt;
+    return Total;
+}
+
+void Display(double fdownpayement, double fincAmnt, double monthly, double finAmount)
+{ 
+     
+    Console.WriteLine("Downpayement: " + fdownpayement.ToString("N2"));
+    Console.WriteLine("Amount Financed: " + fincAmnt.ToString("N2"));
+    Console.WriteLine("Monthly Payment: " + monthly.ToString("N2"));
+    Console.WriteLine("Total Interest: " + finAmount.ToString("N2"));
+
+}
+
+
+
