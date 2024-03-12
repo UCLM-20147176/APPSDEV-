@@ -1,0 +1,53 @@
+using System;
+
+public class ScoreCalculator
+{
+    public static void CalculateScores()
+    {
+        const int grade = 8;
+        double[] scores = new double[grade];
+
+        for (int i = 0; i < grade; i++)
+        {
+            Console.Write("Enter the score of the judge[" + (i + 1) + "]: ");
+            scores[i] = Convert.ToDouble(Console.ReadLine());
+        }
+
+        double max = scores[0];
+        for (int i = 0; i < grade; i++)
+        {
+            if (max < scores[i])
+            {
+                max = scores[i];
+            }
+        }
+
+        double low = scores[0];
+        for (int i = 0; i < grade; i++)
+        {
+            if (low > scores[i])
+            {
+                low = scores[i];
+            }
+        }
+
+        double total = 0;
+        for (int i = 0; i <= 7; i++)
+        {
+            total = total + scores[i];
+
+        }
+
+        total -= (max + low);
+
+        DisplayResults(total);
+    }
+
+    public static void DisplayResults(double total)
+    {
+        Console.WriteLine("The contestant receives a total of " + total.ToString("N2") + " points");
+    }
+
+    
+}
+
