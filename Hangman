@@ -1,0 +1,82 @@
+Here's a simple implementation of the Hangman game in C#:
+
+```csharp
+using System;
+
+class HangmanGame
+{
+    static void Main(string[] args)
+    {
+        // Word to be guessed
+        char[] word = { 'h', 'a', 'n', 'g', 'm', 'a', 'n' };
+        // Array to keep track of guessed letters
+        char[] guessed = new char[word.Length];
+        // Initialize guessed array with '*'
+        for (int i = 0; i < guessed.Length; i++)
+        {
+            guessed[i] = '*';
+        }
+
+        int maxAttempts = 6; // Maximum allowed incorrect guesses
+        int attempts = 0; // Current incorrect guesses made
+        bool gameOver = false; // Flag to indicate game over
+
+        Console.WriteLine("Welcome to Hangman!");
+
+        while (!gameOver)
+        {
+            // Display guessed word so far
+            Console.Write("Word: ");
+            foreach (char letter in guessed)
+            {
+                Console.Write(letter);
+            }
+            Console.WriteLine();
+
+            // Prompt for user input
+            Console.Write("Guess a letter: ");
+            char guess = Char.ToLower(Console.ReadKey().KeyChar);
+            Console.WriteLine();
+
+            bool found = false; // Flag to indicate if guessed letter is found in word
+
+            // Check if guessed letter is in the word
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (word[i] == guess)
+                {
+                    guessed[i] = guess;
+                    found = true;
+                }
+            }
+
+            // If guessed letter is not found in the word
+            if (!found)
+            {
+                Console.WriteLine("Incorrect guess!");
+                attempts++;
+                Console.WriteLine("Attempts left: " + (maxAttempts - attempts));
+            }
+
+            // Check if player has won
+            if (Array.IndexOf(guessed, '*') == -1)
+            {
+                Console.WriteLine("Congratulations! You won!");
+                gameOver = true;
+            }
+
+            // Check if player has lost
+            if (attempts >= maxAttempts)
+            {
+                Console.WriteLine("You ran out of attempts! The word was: " + new string(word));
+                gameOver = true;
+            }
+        }
+
+        Console.WriteLine("Game Over");
+        Console.ReadLine(); // Keep console window open
+    }
+}
+```
+
+This code initializes a word to be guessed ("hangman"), allows the player to guess letters, and tracks correct and incorrect guesses. The game ends when the player either guesses the word correctly or runs out of attempts.
